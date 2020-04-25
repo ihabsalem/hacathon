@@ -39,7 +39,12 @@ export class Server {
     this.app.get("/home", (req, res) => {
       res.sendFile("home.html",  { root: __dirname+ '/../public/' });
     });
-
+    this.app.get("/quiz", (req, res) => {
+      res.sendFile("quiz.html",  { root: __dirname+ '/../public/' });
+    });
+    this.app.get("/create-game", (req, res) => {
+      res.sendFile("create-game.html",  { root: __dirname+ '/../public/' });
+    });
 
     this.app.get("/", (req, res) => {
       console.log('req');

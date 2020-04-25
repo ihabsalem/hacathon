@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>COMAPNY</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script async src="https://www.anglomaniacy.pl/js/jquery-1.9.1.min.js"></script>
+    <script async src="https://www.anglomaniacy.pl/js/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-container">
+            <div class="video-chat-container">
+                <h2 class="talk-info" id="talking-with-info">
+                    <!-- Select active user on the left menu. -->
+                </h2>
+                <div class="boxQuiz b-09f sun-tlo">
+                    <!-- PICTURE MENU  -->
+                    <div class="section group buttons">
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="1"><img id="taskButton1"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-one-bw.png"
+                                    alt="English vocabulary 1"></a>
+                        </div>
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="2"><img id="taskButton2"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-two-bw.png"
+                                    alt="English vocabulary 2"></a>
+                        </div>
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="3"><img id="taskButton3"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-three-bw.png"
+                                    alt="English vocabulary 3"></a></div>
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="4"><img id="taskButton4"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-four-bw.png"
+                                    alt="English vocabulary 4"></a>
+                        </div>
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="5"><img id="taskButton5"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-five-bw.png"
+                                    alt="English vocabulary 5"></a>
+                        </div>
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="6"><img id="taskButton6"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-six-bw.png"
+                                    alt="English vocabulary 6"></a>
+                        </div>
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="7"><img id="taskButton7"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-seven-bw.png"
+                                    alt="English vocabulary 7"></a></div>
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="8"><img id="taskButton8"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-eight-bw.png"
+                                    alt="English vocabulary 8"></a></div>
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="9"><img id="taskButton9"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-nine-bw.png"
+                                    alt="English vocabulary 9"></a>
+                        </div>
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="10"><img id="taskButton10"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-ten-bw.png"
+                                    alt="English vocabulary 10"></a>
+                        </div>
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="11"><img id="taskButton11"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-eleven-bw.png"
+                                    alt="English vocabulary 11"></a></div>
+                        <div class="col12 span_1_of_12 fade"><a class="showSingle" target="12"><img id="taskButton12"
+                                    class="taskButton" src="https://www.anglomaniacy.pl/img/a-twelve-bw.png"
+                                    alt="English vocabulary 12"></a></div>
+                    </div>
+                    <div class="uskokMedium"></div>
+                    <!-- INTRO ************************************************************************************** -->
+                    <div id="div0" class="targetDiv">
+                        <div class="quizQuestionIntro">
+                            <div class="section group jedenjeden">
+                                <img class="imgQuiz" src="https://www.anglomaniacy.pl/img/v-quiz-monkey.png"
+                                    alt="Quiz for ESL kids">
+                            </div>
+                            <hr class="lineGreyDots niewidzi">
+                            <div class="oneLine4">
+                                <figure><img class="introButton" src="https://www.anglomaniacy.pl/img/ws-nic.png"
+                                        alt="Online quizzes">
+                                </figure>
+                                <figure><img class="introButton" src="https://www.anglomaniacy.pl/img/ws-nic.png"
+                                        alt="English quizzes">
+                                </figure>
+                                <figure><img class="introButton" src="https://www.anglomaniacy.pl/img/ws-nic.png"
+                                        alt="Quizzes for ESL kids"></figure>
+                                <figure><img class="introButton" src="https://www.anglomaniacy.pl/img/ws-nic.png"
+                                        alt="Resources for teaching English"></figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 1 BATH ************************************************************************************** -->
+                    <div id="div1" class="targetDiv">
+                        <div id="boxquestion1" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word1" class="imgQuiz" src="https://www.anglomaniacy.pl/img/v-bath-bw.png"
+                                    alt="Quiz task 1">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle1" class="oneLine4">
+
+
+
+
+                                <figure><img id="nie1_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-sponge.png" alt="Quiz answer 1_2">
+                                </figure>
+                                <figure><img id="nie1_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-soap.png" alt="Quiz answer 1_3">
+                                </figure>
+                                <figure><img id="nie1_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-mirror.png" alt="Quiz answer 1_4">
+                                </figure>
+                                <figure><img id="tak1_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-bath.png" alt="Quiz answer 1_1">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 2 BRUSH ************************************************************************************** -->
+                    <div id="div2" class="targetDiv">
+                        <div id="boxquestion2" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word2" class="imgQuiz" src="https://www.anglomaniacy.pl/img/v-brush-bw.png"
+                                    alt="Quiz task 2">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle2" class="oneLine4">
+
+
+
+
+                                <figure><img id="nie2_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-shower.png" alt="Quiz answer 2_3">
+                                </figure>
+                                <figure><img id="nie2_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-toothbrush.png" alt="Quiz answer 2_4">
+                                </figure>
+                                <figure><img id="nie2_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-toothpaste.png" alt="Quiz answer 2_2">
+                                </figure>
+                                <figure><img id="tak2_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-brush.png" alt="Quiz answer 2_1">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 3 COMB ************************************************************************************** -->
+                    <div id="div3" class="targetDiv">
+                        <div id="boxquestion3" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word3" class="imgQuiz" src="https://www.anglomaniacy.pl/img/v-comb-bw.png"
+                                    alt="Quiz task 3">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle3" class="oneLine4">
+
+
+
+
+                                <figure><img id="nie3_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-soap.png" alt="Quiz answer 3_2">
+                                </figure>
+                                <figure><img id="nie3_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-shampoo.png" alt="Quiz answer 3_3">
+                                </figure>
+                                <figure><img id="tak3_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-comb.png" alt="Quiz answer 3_1">
+                                </figure>
+                                <figure><img id="nie3_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-sink.png" alt="Quiz answer 3_4">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 4 MIRROR ************************************************************************************** -->
+                    <div id="div4" class="targetDiv">
+                        <div id="boxquestion4" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word4" class="imgQuiz" src="https://www.anglomaniacy.pl/img/v-mirror-bw.png"
+                                    alt="Quiz task 4">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle4" class="oneLine4">
+
+
+
+
+                                <figure><img id="tak4_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-mirror.png" alt="Quiz answer 4_1">
+                                </figure>
+                                <figure><img id="nie4_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-sponge.png" alt="Quiz answer 4_4">
+                                </figure>
+                                <figure><img id="nie4_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-shower.png" alt="Quiz answer 4_3">
+                                </figure>
+                                <figure><img id="nie4_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-towel.png" alt="Quiz answer 4_2">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 5 SHAMPOO ************************************************************************************** -->
+                    <div id="div5" class="targetDiv">
+                        <div id="boxquestion5" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word5" class="imgQuiz" src="https://www.anglomaniacy.pl/img/v-shampoo-bw.png"
+                                    alt="Quiz task 5">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle5" class="oneLine4">
+
+
+
+
+                                <figure><img id="tak5_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-shampoo.png" alt="Quiz answer 5_1">
+                                </figure>
+                                <figure><img id="nie5_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-bath.png" alt="Quiz answer 5_3">
+                                </figure>
+                                <figure><img id="nie5_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-comb.png" alt="Quiz answer 5_2">
+                                </figure>
+                                <figure><img id="nie5_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-toothpaste.png" alt="Quiz answer 5_4">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 6 SHOWER ************************************************************************************** -->
+                    <div id="div6" class="targetDiv">
+                        <div id="boxquestion6" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word6" class="imgQuiz" src="https://www.anglomaniacy.pl/img/v-shower-bw.png"
+                                    alt="Quiz task 6">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle6" class="oneLine4">
+
+
+
+
+                                <figure><img id="nie6_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-towel.png" alt="Quiz answer 6_3">
+                                </figure>
+                                <figure><img id="nie6_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-toothbrush.png" alt="Quiz answer 6_2">
+                                </figure>
+                                <figure><img id="nie6_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-shampoo.png" alt="Quiz answer 6_4">
+                                </figure>
+                                <figure><img id="tak6_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-shower.png" alt="Quiz answer 6_1">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 7 SINK ************************************************************************************** -->
+                    <div id="div7" class="targetDiv">
+                        <div id="boxquestion7" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word7" class="imgQuiz" src="https://www.anglomaniacy.pl/img/v-sink-bw.png"
+                                    alt="Quiz task 7">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle7" class="oneLine4">
+
+
+
+
+                                <figure><img id="nie7_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-bath.png" alt="Quiz answer 7_3">
+                                </figure>
+                                <figure><img id="tak7_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-sink.png" alt="Quiz answer 7_1">
+                                </figure>
+                                <figure><img id="nie7_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-brush.png" alt="Quiz answer 7_2">
+                                </figure>
+                                <figure><img id="nie7_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-sponge.png" alt="Quiz answer 7_4">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 8 SOAP ************************************************************************************** -->
+                    <div id="div8" class="targetDiv">
+                        <div id="boxquestion8" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word8" class="imgQuiz" src="https://www.anglomaniacy.pl/img/v-soap-bw.png"
+                                    alt="Quiz task 8">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle8" class="oneLine4">
+
+
+
+
+                                <figure><img id="nie8_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-mirror.png" alt="Quiz answer 8_2">
+                                </figure>
+                                <figure><img id="tak8_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-soap.png" alt="Quiz answer 8_1">
+                                </figure>
+                                <figure><img id="nie8_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-towel.png" alt="Quiz answer 8_4">
+                                </figure>
+                                <figure><img id="nie8_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-shower.png" alt="Quiz answer 8_3">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 9 SPOONGE ************************************************************************************** -->
+                    <div id="div9" class="targetDiv">
+                        <div id="boxquestion9" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word9" class="imgQuiz" src="https://www.anglomaniacy.pl/img/v-sponge-bw.png"
+                                    alt="Quiz task 9">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle9" class="oneLine4">
+
+
+
+
+                                <figure><img id="nie9_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-toothpaste.png" alt="Quiz answer 9_4">
+                                </figure>
+                                <figure><img id="nie9_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-bath.png" alt="Quiz answer 9_3">
+                                </figure>
+                                <figure><img id="nie9_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-comb.png" alt="Quiz answer 9_2">
+                                </figure>
+                                <figure><img id="tak9_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-sponge.png" alt="Quiz answer 9_1">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 10 TOOTHBRUSH ************************************************************************************** -->
+                    <div id="div10" class="targetDiv">
+                        <div id="boxquestion10" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word10" class="imgQuiz"
+                                    src="https://www.anglomaniacy.pl/img/v-toothbrush-bw.png" alt="Quiz task 10">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle10" class="oneLine4">
+
+
+
+
+                                <figure><img id="nie10_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-soap.png" alt="Quiz answer 10_3">
+                                </figure>
+                                <figure><img id="nie10_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-brush.png" alt="Quiz answer 10_2">
+                                </figure>
+                                <figure><img id="tak10_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-toothbrush.png" alt="Quiz answer 10_1">
+                                </figure>
+                                <figure><img id="nie10_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-sink.png" alt="Quiz answer 10_4">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 11 TOOTHPASTE ************************************************************************************** -->
+                    <div id="div11" class="targetDiv">
+                        <div id="boxquestion11" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word11" class="imgQuiz"
+                                    src="https://www.anglomaniacy.pl/img/v-toothpaste-bw.png" alt="Quiz task 11">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle11" class="oneLine4">
+
+
+
+
+                                <figure><img id="nie11_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-bath.png" alt="Quiz answer 11_4">
+                                </figure>
+                                <figure><img id="tak11_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-toothpaste.png" alt="Quiz answer 11_1">
+                                </figure>
+                                <figure><img id="nie11_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-soap.png" alt="Quiz answer 11_3">
+                                </figure>
+                                <figure><img id="nie11_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-mirror.png" alt="Quiz answer 11_2">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUESTION 12 TOWEL ************************************************************************************** -->
+                    <div id="div12" class="targetDiv">
+                        <div id="boxquestion12" class="quizQuestion">
+                            <div class="section group jedenjeden">
+                                <img id="word12" class="imgQuiz" src="https://www.anglomaniacy.pl/img/v-towel-bw.png"
+                                    alt="Quiz task 12">
+                            </div>
+                            <hr class="lineGreyDots">
+                            <div id="shuffle12" class="oneLine4">
+
+
+
+
+                                <figure><img id="nie12_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-brush.png" alt="Quiz answer 12_2">
+                                </figure>
+                                <figure><img id="tak12_1" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-towel.png" alt="Quiz answer 12_1">
+                                </figure>
+                                <figure><img id="nie12_2" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-mirror.png" alt="Quiz answer 12_3">
+                                </figure>
+                                <figure><img id="nie12_3" class="cp answerButton"
+                                        src="https://www.anglomaniacy.pl/img/ws-sink.png" alt="Quiz answer 12_4">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <audio id="error" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/games-sounds/beep.mp3">
+                </audio>
+                <audio id="openTask" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/games-sounds/switchoff.mp3">
+                </audio>
+                <audio id="sound_one" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v13.mp3">
+                </audio>
+                <audio id="sound_two" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v36.mp3">
+                </audio>
+                <audio id="sound_three" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v67.mp3">
+                </audio>
+                <audio id="sound_four" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v163.mp3">
+                </audio>
+                <audio id="sound_five" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v227.mp3">
+                </audio>
+                <audio id="sound_six" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v234.mp3">
+                </audio>
+                <audio id="sound_seven" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v255.mp3">
+                </audio>
+                <audio id="sound_eight" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v254.mp3">
+                </audio>
+                <audio id="sound_nine" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v260.mp3">
+                </audio>
+                <audio id="sound_ten" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v287.mp3">
+                </audio>
+                <audio id="sound_eleven" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v288.mp3">
+                </audio>
+                <audio id="sound_twelve" preload="auto">
+                    <source src="https://www.anglomaniacy.pl/sounds/v289.mp3">
+                </audio>
+                <script>
+                    var img1Correct = new Image();
+                    img1Correct.src = "https://www.anglomaniacy.pl/img/v-bath.png";
+                    var img2Correct = new Image();
+                    img2Correct.src = "https://www.anglomaniacy.pl/img/v-brush.png";
+                    var img3Correct = new Image();
+                    img3Correct.src = "https://www.anglomaniacy.pl/img/v-comb.png";
+                    var img4Correct = new Image();
+                    img4Correct.src = "https://www.anglomaniacy.pl/img/v-mirror.png";
+                    var img5Correct = new Image();
+                    img5Correct.src = "https://www.anglomaniacy.pl/img/v-shampoo.png";
+                    var img6Correct = new Image();
+                    img6Correct.src = "https://www.anglomaniacy.pl/img/v-shower.png";
+                    var img7Correct = new Image();
+                    img7Correct.src = "https://www.anglomaniacy.pl/img/v-sink.png";
+                    var img8Correct = new Image();
+                    img8Correct.src = "https://www.anglomaniacy.pl/img/v-soap.png";
+                    var img9Correct = new Image();
+                    img9Correct.src = "https://www.anglomaniacy.pl/img/v-sponge.png";
+                    var img10Correct = new Image();
+                    img10Correct.src = "https://www.anglomaniacy.pl/img/v-toothbrush.png";
+                    var img11Correct = new Image();
+                    img11Correct.src = "https://www.anglomaniacy.pl/img/v-toothpaste.png";
+                    var img12Correct = new Image();
+                    img12Correct.src = "https://www.anglomaniacy.pl/img/v-towel.png";
+                </script>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/quiz.js"></script>
+</body>
+
+</html>
