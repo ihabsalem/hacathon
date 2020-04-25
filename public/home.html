@@ -58,7 +58,7 @@
 
 
   <div class="container">
-    <header class="header">
+       <header class="header">
       <div class="logo-container">
         <img src="./img/doge.png" alt="doge logo" class="logo-img" />
         <h1 class="logo-text">
@@ -66,6 +66,116 @@
         </h1>
       </div>
     </header>
+      <!-- start of filter HTML -->
+    <div class="cd-filter">
+        <form>
+
+            <div class="cd-filter-block">
+                <h4>Choose a School</h4>
+
+                <ul class="cd-filter-content cd-filters list">
+                    <li>
+                        <input class="filter" data-filter="" type="radio" name="radioButton" id="radio1"
+                            checked>
+                        <label class="radio-label" for="radio1">All</label>
+                    </li>
+
+                    <li>
+                        <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id="radio2">
+                        <label class="radio-label" for="radio2">Future School</label>
+                    </li>
+
+                    <li>
+                        <input class="filter" data-filter=".radio3" type="radio" name="radioButton" id="radio3">
+                        <label class="radio-label" for="radio3">ESchool.com</label>
+                    </li>
+                    <li>
+                        <input class="filter" data-filter=".radio4" type="radio" name="radioButton" id="radio4"
+                            disabled>
+                        <label class="radio-label" for="radio4">Summer School</label>
+                    </li>
+                </ul> <!-- cd-filter-content -->
+            </div> <!-- cd-filter-block -->
+
+            <div class="cd-filter-block">
+                <h4>Filter Results</h4>
+
+                <div class="cd-filter-content">
+                    <input type="search" placeholder="Search Amazon.com">
+                </div> <!-- cd-filter-content -->
+            </div> <!-- cd-filter-block -->
+
+            <div class="cd-filter-block">
+                <h4>Categories</h4>
+
+                <ul class="cd-filter-content cd-filters list">
+                    <li>
+                        <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
+                        <label class="checkbox-label" for="checkbox1">Math</label>
+                    </li>
+
+                    <li>
+                        <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
+                        <label class="checkbox-label" for="checkbox2">Science</label>
+                    </li>
+
+                    <li>
+                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                        <label class="checkbox-label" for="checkbox3">Arabic</label>
+                    </li>
+                    <li>
+                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                        <label class="checkbox-label" for="checkbox3">English</label>
+                    </li>
+                    <li>
+                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                        <label class="checkbox-label" for="checkbox3">Islam</label>
+                    </li>
+                    <li>
+                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                        <label class="checkbox-label" for="checkbox3">Computer</label>
+                    </li>
+                    <li>
+                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                        <label class="checkbox-label" for="checkbox3">Fun Activities</label>
+                    </li>
+                </ul> <!-- cd-filter-content -->
+            </div> <!-- cd-filter-block -->
+
+            <div class="cd-filter-block">
+                <h4>Teacher</h4>
+
+                <div class="cd-filter-content">
+                    <div class="cd-select cd-filters">
+                        <select class="filter" name="selectThis" id="selectThis">
+                            <option value="">Select a Teacher</option>
+                            <option value=".option1">USD</option>
+                            <option value=".option2">BRL</option>
+                            <option value=".option3">EUR</option>
+                            <option value=".option4">GBP</option>
+                        </select>
+                    </div> <!-- cd-select -->
+                </div> <!-- cd-filter-content -->
+            </div> <!-- cd-filter-block -->
+
+
+        </form>
+
+        <a href="#0" class="cd-close"><i class="icon ent-close"></i> close </a>
+    </div> <!-- cd-filter -->
+
+    <!-- <a href="#0" class="cd-filter-trigger" style="position: absolute; z-index:1;color: #9a9a9a; text-indent: 0; background-position: left center;padding-left: 24px;  left: 40px;    text-transform: uppercase; width:auto">Filters</a> -->
+    <a href="#0" class="cd-filter-trigger" style="top: 115px; z-index:1;color: #9a9a9a; text-indent: 0; background-position: left center; padding-left: 24px;left: 44px;text-transform: uppercase; width:auto">Filters</a>
+
+        <div class="search" style="margin-top:40px;">
+
+            <form onsubmit="search(event)">
+              <input autofocus id="searchInput" type="text" placeholder="Search...">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+  <!-- end of filter HTML -->
+
     <div class="content-container" id="app">
       <h1 class="title">Your Own Games</h1>
       <div class="container">
@@ -147,6 +257,223 @@
     </div>
   </div>
 
+
+  <!-- start of filter logic -->
+  <script
+    src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+<script src='https://cdn.jsdelivr.net/jquery.mixitup/2.1.11/jquery.mixitup.min.js'></script>
+<script>jQuery(document).ready(function ($) {
+        //open/close lateral filter
+        $('.cd-filter-trigger').on('click', function () {
+            triggerFilter(true);
+        });
+        $('.cd-filter .cd-close').on('click', function () {
+            triggerFilter(false);
+        });
+
+        function triggerFilter($bool) {
+            var elementsToTrigger = $([$('.cd-filter-trigger'), $('.cd-filter'), $('.cd-tab-filter'), $('.cd-gallery')]);
+            elementsToTrigger.each(function () {
+                $(this).toggleClass('filter-is-visible', $bool);
+            });
+        }
+
+        //mobile version - detect click event on filters tab
+        var filter_tab_placeholder = $('.cd-tab-filter .placeholder a'),
+            filter_tab_placeholder_default_value = 'Select',
+            filter_tab_placeholder_text = filter_tab_placeholder.text();
+
+        $('.cd-tab-filter li').on('click', function (event) {
+            //detect which tab filter item was selected
+            var selected_filter = $(event.target).data('type');
+
+            //check if user has clicked the placeholder item
+            if ($(event.target).is(filter_tab_placeholder)) {
+                (filter_tab_placeholder_default_value == filter_tab_placeholder.text()) ? filter_tab_placeholder.text(filter_tab_placeholder_text) : filter_tab_placeholder.text(filter_tab_placeholder_default_value);
+                $('.cd-tab-filter').toggleClass('is-open');
+
+                //check if user has clicked a filter already selected 
+            } else if (filter_tab_placeholder.data('type') == selected_filter) {
+                filter_tab_placeholder.text($(event.target).text());
+                $('.cd-tab-filter').removeClass('is-open');
+
+            } else {
+                //close the dropdown and change placeholder text/data-type value
+                $('.cd-tab-filter').removeClass('is-open');
+                filter_tab_placeholder.text($(event.target).text()).data('type', selected_filter);
+                filter_tab_placeholder_text = $(event.target).text();
+
+                //add class selected to the selected filter item
+                $('.cd-tab-filter .selected').removeClass('selected');
+                $(event.target).addClass('selected');
+            }
+        });
+
+        //close filter dropdown inside lateral .cd-filter 
+        $('.cd-filter-block h4').on('click', function () {
+            $(this).toggleClass('closed').siblings('.cd-filter-content').slideToggle(300);
+        })
+
+        //fix lateral filter and gallery on scrolling
+        $(window).on('scroll', function () {
+            (!window.requestAnimationFrame) ? fixGallery() : window.requestAnimationFrame(fixGallery);
+        });
+
+        function fixGallery() {
+            var offsetTop = $('.cd-main-content').offset().top,
+                scrollTop = $(window).scrollTop();
+            (scrollTop >= offsetTop) ? $('.cd-main-content').addClass('is-fixed') : $('.cd-main-content').removeClass('is-fixed');
+        }
+
+        /************************************
+            MitItUp filter settings
+            More details: 
+            https://mixitup.kunkalabs.com/
+            or:
+            https://codepen.io/patrickkunka/
+        *************************************/
+
+        buttonFilter.init();
+        $('.cd-gallery ul').mixItUp({
+            controls: {
+                enable: false
+            },
+            callbacks: {
+                onMixStart: function () {
+                    $('.cd-fail-message').fadeOut(200);
+                },
+                onMixFail: function () {
+                    $('.cd-fail-message').fadeIn(200);
+                }
+            }
+        });
+
+        //search filtering
+        //credits https://codepen.io/edprats/pen/pzAdg
+        var inputText;
+        var $matching = $();
+
+        var delay = (function () {
+            var timer = 0;
+            return function (callback, ms) {
+                clearTimeout(timer);
+                timer = setTimeout(callback, ms);
+            };
+        })();
+
+        $(".cd-filter-content input[type='search']").keyup(function () {
+            // Delay function invoked to make sure user stopped typing
+            delay(function () {
+                inputText = $(".cd-filter-content input[type='search']").val().toLowerCase();
+                // Check to see if input field is empty
+                if ((inputText.length) > 0) {
+                    $('.mix').each(function () {
+                        var $this = $(this);
+
+                        // add item to be filtered out if input text matches items inside the title   
+                        if ($this.attr('class').toLowerCase().match(inputText)) {
+                            $matching = $matching.add(this);
+                        } else {
+                            // removes any previously matched item
+                            $matching = $matching.not(this);
+                        }
+                    });
+                    $('.cd-gallery ul').mixItUp('filter', $matching);
+                } else {
+                    // resets the filter to show all item if input is empty
+                    $('.cd-gallery ul').mixItUp('filter', 'all');
+                }
+            }, 200);
+        });
+    });
+
+    /*****************************************************
+        MixItUp - Define a single object literal 
+        to contain all filter custom functionality
+    *****************************************************/
+    var buttonFilter = {
+        // Declare any variables we will need as properties of the object
+        $filters: null,
+        groups: [],
+        outputArray: [],
+        outputString: '',
+
+        // The "init" method will run on document ready and cache any jQuery objects we will need.
+        init: function () {
+            var self = this; // As a best practice, in each method we will asign "this" to the variable "self" so that it remains scope-agnostic. We will use it to refer to the parent "buttonFilter" object so that we can share methods and properties between all parts of the object.
+
+            self.$filters = $('.cd-main-content');
+            self.$container = $('.cd-gallery ul');
+
+            self.$filters.find('.cd-filters').each(function () {
+                var $this = $(this);
+
+                self.groups.push({
+                    $inputs: $this.find('.filter'),
+                    active: '',
+                    tracker: false
+                });
+            });
+
+            self.bindHandlers();
+        },
+
+        // The "bindHandlers" method will listen for whenever a button is clicked. 
+        bindHandlers: function () {
+            var self = this;
+
+            self.$filters.on('click', 'a', function (e) {
+                self.parseFilters();
+            });
+            self.$filters.on('change', function () {
+                self.parseFilters();
+            });
+        },
+
+        parseFilters: function () {
+            var self = this;
+
+            // loop through each filter group and grap the active filter from each one.
+            for (var i = 0, group; group = self.groups[i]; i++) {
+                group.active = [];
+                group.$inputs.each(function () {
+                    var $this = $(this);
+                    if ($this.is('input[type="radio"]') || $this.is('input[type="checkbox"]')) {
+                        if ($this.is(':checked')) {
+                            group.active.push($this.attr('data-filter'));
+                        }
+                    } else if ($this.is('select')) {
+                        group.active.push($this.val());
+                    } else if ($this.find('.selected').length > 0) {
+                        group.active.push($this.attr('data-filter'));
+                    }
+                });
+            }
+            self.concatenate();
+        },
+
+        concatenate: function () {
+            var self = this;
+
+            self.outputString = ''; // Reset output string
+
+            for (var i = 0, group; group = self.groups[i]; i++) {
+                self.outputString += group.active;
+            }
+
+            // If the output string is empty, show all rather than none:    
+            !self.outputString.length && (self.outputString = 'all');
+
+            // Send the output string to MixItUp via the 'filter' method:    
+            if (self.$container.mixItUp('isLoaded')) {
+                self.$container.mixItUp('filter', self.outputString);
+            }
+        }
+    };
+  //# sourceURL=pen.js
+</script>
 
 
 </body>
