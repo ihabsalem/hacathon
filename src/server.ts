@@ -31,9 +31,21 @@ export class Server {
   }
 
   private configureRoutes(): void {
-    this.app.get("/", (req, res) => {
-      res.sendFile("index.html");
+
+    this.app.get("/login", (req, res) => {
+      res.sendFile("login.html",  { root: __dirname+ '/../public/' });
     });
+
+    this.app.get("/home", (req, res) => {
+      res.sendFile("home.html",  { root: __dirname+ '/../public/' });
+    });
+
+
+    this.app.get("/", (req, res) => {
+      console.log('req');
+      res.sendFile("index.html", { root: __dirname });
+    });
+
   }
 
   private handleSocketConnection(): void {
