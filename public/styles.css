@@ -12,6 +12,13 @@ body {
     background-color: #ffffff;
     padding: 10px 40px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header > .notification-icon {
+    height: 40px;
+    width: 45px;
 }
 
 .header > .logo-container {
@@ -28,6 +35,7 @@ body {
 .header > .logo-container > .logo-text {
     font-size: 26px;
     font-weight: 700;
+    color: palevioletred;
 }
 
 .header > .logo-container > .logo-text > .logo-highlight {
@@ -2438,7 +2446,6 @@ xcustom form elements
 /* filter and search css */
   h1 {
     font-size: 2rem;
-    margin-bottom: 25px;
     color: white;
   }
   
