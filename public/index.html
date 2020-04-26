@@ -8,12 +8,61 @@
   <title>COMAPNY</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./css/main1.css" />
+  <link rel="stylesheet" href="./css/normalize.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
   <script async src="https://www.anglomaniacy.pl/js/jquery-1.9.1.min.js"></script>
   <script async src="https://www.anglomaniacy.pl/js/jquery-ui.min.js"></script>
+  <script src="js/modernizr-2.6.2.min.js"></script> 
+
+  <style type="text/css">
+    .back-link a {
+      color: #4ca340;
+      text-decoration: none;
+      border-bottom: 1px #4ca340 solid;
+    }
+
+    .back-link a:hover,
+    .back-link a:focus {
+      color: #408536;
+      text-decoration: none;
+      border-bottom: 1px #408536 solid;
+    }
+
+    /* h1 {
+      height: 100%;
+      margin: 0;
+      font-size: 14px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 32px;
+      margin-bottom: 3px;
+    } */
+    .entry-header {
+      text-align: left;
+      margin: 0 auto 50px auto;
+      width: 80%;
+      max-width: 978px;
+      position: relative;
+      z-index: 10001;
+    }
+
+    #demo-content {
+      padding-top: 100px;
+    }
+  </style>
+
 </head>
 
 <body>
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+  </div>
+
   <div class="container">
     <header class="header">
       <div class="logo-container">
@@ -452,6 +501,15 @@
   </div>
   <script src="./scripts/index.js"></script>
   <script src="./scripts/quiz.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        $('body').addClass('loaded');
+        $('h1').css('color', '#222222');
+      }, 2000);
+
+    });
+  </script>
 </body>
 
 </html>
