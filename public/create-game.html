@@ -27,7 +27,6 @@
     function drop(ev) {
         ev.preventDefault();
         var data = ev.dataTransfer.getData("text");
-
         ev.target.appendChild(document.getElementById(data));
         setTimeout(() => {
             $('#C' + data).remove();
@@ -37,17 +36,30 @@
 
         }, 0)
     }
+
+    function saveGame() {
+        localStorage.setItem('GameSaved', true);
+        window.location.href="http://localhost:5000/home"
+    }
 </script>
 
 <body>
     <div class="container">
-        <header class="header">
+        <header class="header" style="display: flex;
+        justify-content: space-between;
+        align-items: center;">
             <div class="logo-container">
                 <img src="./img/doge.png" alt="doge logo" class="logo-img" />
                 <h1 class="logo-text">
                     Compa<span class="logo-highlight">ny</span>
                 </h1>
             </div>
+          <div class="action">
+              <input type="text" placeholder="Enter Game Name....">
+            <button style="padding: 10px 20px; border-radius: 10px;
+            font-weight: bold; cursor: pointer;
+            background: #09f; color:#fff" onclick="saveGame()">Save Game</button>
+          </div>
         </header>
         <div class="content-container">
             <div class="active-users-panel" style="padding: 0px 10px;overflow: auto;" id="active-user-container">
@@ -101,24 +113,24 @@
                                 src="https://www.anglomaniacy.pl/img/ws-mirror.png" alt="Quiz answer 1_4">
                         </figure>
                     </li>
-                    <li class="active-user" id="Qnie1_3">
+                    <li class="active-user" id="Qnie2_2">
                         <figure><img id="nie2_2" class="cp answerButton"
-                            src="https://www.anglomaniacy.pl/img/ws-shower.png" alt="Quiz answer 2_3">
+                                src="https://www.anglomaniacy.pl/img/ws-shower.png" alt="Quiz answer 2_3">
                         </figure>
                     </li>
-                    <li class="active-user" id="Qnie1_3">
+                    <li class="active-user" id="Qnie2_3">
                         <figure><img id="nie2_3" class="cp answerButton"
-                            src="https://www.anglomaniacy.pl/img/ws-toothbrush.png" alt="Quiz answer 2_4">
+                                src="https://www.anglomaniacy.pl/img/ws-toothbrush.png" alt="Quiz answer 2_4">
                         </figure>
                     </li>
-                    <li class="active-user" id="Qnie1_3">
+                    <li class="active-user" id="Qnie2_1">
                         <figure><img id="nie2_1" class="cp answerButton"
-                            src="https://www.anglomaniacy.pl/img/ws-toothpaste.png" alt="Quiz answer 2_2">
+                                src="https://www.anglomaniacy.pl/img/ws-toothpaste.png" alt="Quiz answer 2_2">
                         </figure>
                     </li>
-                    <li class="active-user" id="Qnie1_3">
+                    <li class="active-user" id="Qtak2_1">
                         <figure><img id="tak2_1" class="cp answerButton"
-                            src="https://www.anglomaniacy.pl/img/ws-brush.png" alt="Quiz answer 2_1">
+                                src="https://www.anglomaniacy.pl/img/ws-brush.png" alt="Quiz answer 2_1">
                         </figure>
                     </li>
 
