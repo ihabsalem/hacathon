@@ -7,13 +7,21 @@
 
     $('.validate-form').on('submit', function () {
         var check = true;
+
         for (var i = 0; i < input.length; i++) {
             if (validate(input[i]) == false) {
                 showValidate(input[i]);
                 check = false;
             }
         }
-        return check;
+        var email = $($('.validate-input .input100')[0]).val();
+        if(email.indexOf('nermeen') !== -1) {
+            window.location.href="http://localhost:5000/home"
+        } else {
+            window.location.href="http://localhost:5000/student"
+
+        }
+        return false;
     });
 
     $('.validate-form .input100').each(function () {
