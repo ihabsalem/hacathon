@@ -52,7 +52,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    min-height: 500px;
+    min-height: 600px;
 }
 
 .active-users-panel {
