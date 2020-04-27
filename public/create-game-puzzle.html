@@ -12,14 +12,13 @@
     <script async src="https://www.anglomaniacy.pl/js/jquery-1.9.1.min.js"></script>
     <script async src="https://www.anglomaniacy.pl/js/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style> 
+    <style>
 
     </style>
 </head>
 <script>
 
-      function openFileOption()
-    {
+    function openFileOption() {
         document.getElementById("file1").click();
     }
     function fileUploaded(e) {
@@ -73,16 +72,31 @@
             font-weight: bold; cursor: pointer;
             background: #09f; color:#fff" onclick="saveGame()">Save Game</button>
             </div>
-        </header>      
-        <div class="content-container" style="display: flex;flex-direction: row;height: 100%;">
-            <h3 class="panel-title" style="display: flex;justify-content: space-between;">
-                <input type="file" id="file1" style="display:none" accept="image/x-png,image/gif,image/jpeg" onchange="fileUploaded(event)">
-                <a href="#" onclick="openFileOption();return;">Upload</a>
-            </h3>
+        </header>
+        <div class="content-container" style="display: flex;flex-direction: column;height: 100%;">
+            <div class="action" style="padding:0px 25px;position: absolute;">
+
+                <h3 class="panel-title" style="display: flex;justify-content: space-between;    background-color: palevioletred;
+                color: white;
+                text-align: center;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 6px;
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                padding: 13px 28px 13px 28px;
+                width: 160px;
+                text-shadow: 1px 1px 1px #949494;">
+                    <input type="file" id="file1" style="display:none" accept="image/x-png,image/gif,image/jpeg"
+                        onchange="fileUploaded(event)">
+                    <a href="#" style="color: white;" onclick="openFileOption();return;">Upload</a>
+                </h3>
+            </div>
             <iframe height="100%" width="100%" src="http://localhost:5000/puzzle"></iframe>
 
         </div>
-             
+
     </div>
 </body>
 
