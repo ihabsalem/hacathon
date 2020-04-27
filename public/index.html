@@ -90,7 +90,22 @@
           <!-- Select active user on the left menu. -->
         </h2>
 
-        <section slot="body" style="    width: calc(100% - 346px);right: 20px; position: fixed;">
+
+        <div id="board" style="    width: calc(100% - 346px);
+        right: 20px;
+        position: fixed;">
+          <canvas class="whiteboard" ></canvas>
+
+          <div class="colors">
+            <div class="color black"></div>
+            <div class="color red"></div>
+            <div class="color green"></div>
+            <div class="color blue"></div>
+            <div class="color yellow"></div>
+          </div>
+        </div>
+
+        <section slot="body" style="display: none;   width: calc(100% - 346px);right: 20px; position: fixed;">
           <iframe height="547px" width="100%" src="http://192.168.1.67:5000/puzzle"></iframe>
         </section>
 
@@ -112,10 +127,10 @@
   <script src="./scripts/quiz.js"></script>
   <script>
     window.addEventListener('load', function () {
-      setTimeout(function () {
+      // setTimeout(function () {
         $('body').addClass('loaded');
         $('h1').css('color', '#222222');
-      }, 2000);
+      // }, 0);
 
     });
   </script>
