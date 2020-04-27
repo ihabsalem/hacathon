@@ -68,23 +68,12 @@
 
   <div class="container">
     <header class="header">
-    <div class="logo-container" onclick="window.location.href='http://localhost:5000/home';" style="cursor: pointer;">
+      <div class="logo-container" onclick="window.location.href='http://localhost:5000/home';" style="cursor: pointer;">
         <img src="./images/logo.png" width="auto" height="62"/>
     </div>
       <img style="height:78px; position:absolute; left:42%" src="./images/kids-together.png" />
       <img class="notification-icon" src="./images/notification-icon-with-number.png" />
-      <div onclick="signOut()">
-        <i  style="width: 45px;
-        cursor: pointer;
-        border: 2px solid transparent;
-        font-size: 31px;" class="fa fa-sign-out" aria-hidden="true"></i>
-      </div>
-      <script>
-        function signOut() {
-            localStorage.setItem('user', '');
-            window.location.href = 'http://localhost:5000/login';
-        }
-      </script>
+
     </header>
     <div class="content-container">
       <div class="active-users-panel" id="active-user-container" style=" margin-bottom: 20px;">

@@ -64,8 +64,8 @@
 
   <div class="container">
        <header class="header">
-      <div class="logo-container" onclick="window.location.href='http://localhost:5000/home';" style="cursor: pointer;">
-        <img src="./images/logo.png" width="auto" height="62"/>
+        <div class="logo-container" onclick="window.location.href='http://localhost:5000/home';" style="cursor: pointer;">
+          <img src="./images/logo.png" width="auto" height="62"/>
 
       </div>
       <img style="height:78px; position:absolute; left:42%" src="./images/kids-together.png"/>
@@ -74,6 +74,18 @@
         
         <button onclick="goToVideoPage()" type="submit"><i class="fa fa-video-camera"></i> Start Video</button>
         <img class="notification-icon" src="./images/notification-icon-with-number.png"/>
+        <div onclick="signOut()">
+          <i  style="width: 45px;
+          cursor: pointer;
+          border: 2px solid transparent;
+          font-size: 31px;" class="fa fa-sign-out" aria-hidden="true"></i>
+        </div>
+        <script>
+          function signOut() {
+              localStorage.setItem('user', '');
+              window.location.href = 'http://192.168.1.67:5000/login';
+          }
+        </script>
       </div>
       <script>
         function goToVideoPage() {
