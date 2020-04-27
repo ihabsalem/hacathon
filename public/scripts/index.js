@@ -85,6 +85,7 @@ function updateUserList(socketIds) {
 const socket = io.connect('localhost:5000');
 
 socket.on('update-user-list', ({ users }) => {
+    console.log('usersss', users);
     updateUserList(users);
 });
 
