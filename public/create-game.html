@@ -39,7 +39,7 @@
 
     function saveGame() {
         localStorage.setItem('GameSaved', true);
-        window.location.href="http://localhost:5000/home"
+        window.location.href = "http://localhost:5000/home"
     }
 </script>
 
@@ -54,12 +54,12 @@
                     Compa<span class="logo-highlight">ny</span>
                 </h1>
             </div>
-          <div class="action">
-              <input type="text" placeholder="Enter Game Name....">
-            <button style="padding: 10px 20px; border-radius: 10px;
+            <div class="action">
+                <input type="text" placeholder="Enter Game Name....">
+                <button style="padding: 10px 20px; border-radius: 10px;
             font-weight: bold; cursor: pointer;
             background: #09f; color:#fff" onclick="saveGame()">Save Game</button>
-          </div>
+            </div>
         </header>
         <div class="content-container">
             <div class="active-users-panel" style="padding: 0px 10px;overflow: auto;" id="active-user-container">
@@ -79,6 +79,7 @@
                         <figure><img id="Q_nie7_2" class="cp answerButton" ondragstart="drag(event)"
                                 src="https://www.anglomaniacy.pl/img/v-brush-bw.png" alt="Quiz answer 7_3"></figure>
                     </li>
+                    <!-- 
                     <li class="active-user" id="CQ_nie7_3">
                         <figure><img id="Q_nie7_3" class="cp answerButton" ondragstart="drag(event)"
                                 src="https://www.anglomaniacy.pl/img/v-comb-bw.png" alt="Quiz answer 7_3"></figure>
@@ -90,50 +91,31 @@
                     <li class="active-user" id="CQ_nie7_5">
                         <figure><img id="Q_nie7_5" class="cp answerButton" ondragstart="drag(event)"
                                 src="https://www.anglomaniacy.pl/img/v-shampoo-bw.png" alt="Quiz answer 7_3"></figure>
-                    </li>
+                    </li> -->
                     <li class="active-user">
                         <strong>Answers</strong>
-                    </li>
-                    <li class="active-user" id="Qnie7_2">
-                        <figure><img id="nie7_2" class="cp answerButton" ondragstart="drag(event)"
-                                src="https://www.anglomaniacy.pl/img/ws-bath.png" alt="Quiz answer 7_3"></figure>
-                    </li>
-                    <li class="active-user" id="Qnie1_1">
-                        <figure><img id="nie1_1" class="cp answerButton" ondragstart="drag(event)"
-                                src="https://www.anglomaniacy.pl/img/ws-sponge.png" alt="Quiz answer 1_2">
-                        </figure>
-                    </li>
-                    <li class="active-user" id="Qnie1_2">
-                        <figure><img id="nie1_2" class="cp answerButton" ondragstart="drag(event)"
-                                src="https://www.anglomaniacy.pl/img/ws-soap.png" alt="Quiz answer 1_3">
-                        </figure>
-                    </li>
-                    <li class="active-user" id="Qnie1_3">
-                        <figure><img id="nie1_3" class="cp answerButton" ondragstart="drag(event)"
-                                src="https://www.anglomaniacy.pl/img/ws-mirror.png" alt="Quiz answer 1_4">
-                        </figure>
-                    </li>
-                    <li class="active-user" id="Qnie2_2">
-                        <figure><img id="nie2_2" class="cp answerButton"
-                                src="https://www.anglomaniacy.pl/img/ws-shower.png" alt="Quiz answer 2_3">
-                        </figure>
-                    </li>
-                    <li class="active-user" id="Qnie2_3">
-                        <figure><img id="nie2_3" class="cp answerButton"
-                                src="https://www.anglomaniacy.pl/img/ws-toothbrush.png" alt="Quiz answer 2_4">
-                        </figure>
-                    </li>
-                    <li class="active-user" id="Qnie2_1">
-                        <figure><img id="nie2_1" class="cp answerButton"
-                                src="https://www.anglomaniacy.pl/img/ws-toothpaste.png" alt="Quiz answer 2_2">
-                        </figure>
-                    </li>
-                    <li class="active-user" id="Qtak2_1">
-                        <figure><img id="tak2_1" class="cp answerButton"
-                                src="https://www.anglomaniacy.pl/img/ws-brush.png" alt="Quiz answer 2_1">
-                        </figure>
-                    </li>
+                        <p style="display: flex;">
+                            <input id="addAnswer" type="text" name="input">
+                            <span onclick="addAnswer()" class="input-group-addon suffix"><i style="display: flex;
+                                justify-content: center;
+                                align-content: center;
+                                align-items: center;" class="fa fa-plus" aria-hidden="true"></i></span>
+                        </p>
+                        <script>
+                            function addAnswer() {
+                                $('.active-users-panel').append($('<li class="active-user" id="Qnie7_2"> <figure><img id="nie7_2" class="cp answerButton" ondragstart="drag(event)"  src="https://www.anglomaniacy.pl/img/ws-' + $('#addAnswer').val() + '.png" alt="Quiz answer 7_3"></figure> </li>'))
+                                $('#addAnswer').val('');
+                            }
+                            window.addEventListener('load', function () {
 
+                                $('#addAnswer').keyup(function (e) {
+                                    if (e.keyCode == 13) {
+                                        addAnswer();
+                                    }
+                                });
+                            });
+                        </script>
+                    </li>
                 </ul>
             </div>
             <div class="video-chat-container">
