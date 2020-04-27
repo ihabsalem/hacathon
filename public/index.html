@@ -142,7 +142,13 @@
         $('.student-local').text('Maysa')
         $('.student-remote').text('Nour')
       }
+      $('.student-remote').on('click',()=>{
+        $('.student-remote').toggleClass('active');
+      });
+      $('.student-local').on('click',()=>{
+        $('.student-local').toggleClass('active');
 
+});
       // setTimeout(function () {
       $('body').addClass('loaded');
       $('h1').css('color', '#222222');
