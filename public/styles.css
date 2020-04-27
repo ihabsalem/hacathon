@@ -2705,12 +2705,19 @@ strong {
 }
 
 .start-video {
+    margin: 0px 10px;
     display: flex;
     align-items: center;
 }
 .start-video button {
+    background-color: transparent;
     border-radius: 11px;
-    border: 2px solid transparent;
+    border: 2px solid palevioletred;
+    color: gray;
+}
+.start-video button i {
+   color: palevioletred;
+
 }
 .start-video button:hover {
     border: 2px solid #af5a76;

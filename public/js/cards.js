@@ -83,5 +83,8 @@ const app = new Vue({
     el: '#app',
     data: {
         showModal: false,
+        showMathModal: false,
+        showMatchingModal: false,
+        showPuzzleModal: false
     },
 });

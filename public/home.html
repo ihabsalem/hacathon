@@ -43,10 +43,9 @@
                     </div>
       
                     <div class="modal-body">
-                      <img src="./images/math-game.png" />
-                      <!-- <slot name="body">
+                      <slot name="body">
                         default body
-                      </slot> -->
+                      </slot>
                     </div>
       
                     <!-- <div class="modal-footer">
@@ -209,7 +208,7 @@
           </card>
           <card
           data-image="./images/puzzle.jpeg">
-          <h1 slot="header">Beaches</h1>
+          <h1 slot="header">My Puzzle</h1>
             <div slot="actions" class="actions">
               <p slot="content" id="show-modal" @click="showModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
               </p>
@@ -221,12 +220,55 @@
       </section>
       <h1 class="title">Create Games from Templates</h1>
       <div class="container">
+        
+        <modal v-if="showMatchingModal" @close="showMatchingModal = false">
+          <!--
+                      you can use custom content here to overwrite
+                      default content
+                    -->
+          <h3 slot="header" class="modal-header">
+            <span style="margin: 0 auto">Match Things</span>
+            <div @click="showMatchingModal = false" class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
+          </h3>
+          <section slot="body">
+            <img src="./images/matching.png" />
+          </section>
+        </modal>     
+        <modal v-if="showMathModal" @close="showMathModal = false">
+          <!--
+                      you can use custom content here to overwrite
+                      default content
+                    -->
+          <h3 slot="header" class="modal-header">
+            <span style="margin: 0 auto">         Let's do Calculations!</span>
+
+            <div @click="showMathModal = false" class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
+          </h3>
+          <section slot="body">
+            <img src="./images/math-game.png" />
+          </section>
+        </modal>        
+        <modal v-if="showPuzzleModal" @close="showPuzzleModal = false">
+          <!--
+                      you can use custom content here to overwrite
+                      default content
+                    -->
+          <h3 slot="header" class="modal-header"> 
+            <span style="margin: 0 auto"> My Puzzle </span>
+            <div @click="showPuzzleModal = false" class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
+          </h3>
+          <section slot="body">
+            <iframe height="547px" width="100%" src="http://localhost:5000/puzzle"></iframe>
+          </section>
+        </modal>
         <modal v-if="showModal" @close="showModal = false">
           <!--
                       you can use custom content here to overwrite
                       default content
                     -->
-          <h3 slot="header" class="modal-header">custom header
+          <h3 slot="header" class="modal-header">
+            <span style="margin: 0 auto"> Multiple Choice </span>
+
             <div @click="showModal = false" class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
           </h3>
           <section slot="body">
@@ -237,32 +279,32 @@
           data-image="./images/math.png">
           <h1 slot="header">Let's do Calculations</h1>
           <div slot="actions" class="actions">
-            <p slot="content" id="show-modal" @click="showModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
+            <p slot="content" id="show-modal" @click="showMathModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
             </p>
             <p onclick="createGame()" slot="content"><i class="fa fa-plus" aria-hidden="true"></i> </p>
           </div>
         </card>
         <card
         data-image="./images/puzzle.jpeg">
-        <h1 slot="header">Beaches</h1>
+        <h1 slot="header">My Puzzle</h1>
           <div slot="actions" class="actions">
-            <p slot="content" id="show-modal" @click="showModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
+            <p slot="content" id="show-modal" @click="showPuzzleModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
             </p>
             <p onclick="createGame()" slot="content"><i class="fa fa-plus" aria-hidden="true"></i> </p>
           </div>
         </card>
         <card
-          data-image="https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
-          <h1 slot="header">Trees</h1>
+          data-image="./images/matching-template-2.jpg">
+          <h1 slot="header">Matching Game</h1>
           <div slot="actions" class="actions">
-            <p slot="content" id="show-modal" @click="showModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
+            <p slot="content" id="show-modal" @click="showMatchingModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
             </p>
             <p onclick="createGame()" slot="content"><i class="fa fa-plus" aria-hidden="true"></i> </p>
           </div>
         </card>
         <card
-          data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
-          <h1 slot="header">Lakes</h1>
+          data-image="./images/multiple-choice.jpg">
+          <h1 slot="header">Multiple Choice</h1>
           <div slot="actions" class="actions">
             <p slot="content" id="show-modal" @click="showModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
             </p>
