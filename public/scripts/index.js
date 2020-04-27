@@ -68,11 +68,11 @@ function updateUserList(socketIds) {
     const activeUserContainer = document.getElementById(
         'active-user-container'
     );
-    console.log('fefre', socketIds);
     // var isUserConnectedToVideo = false;
-    if (socketIds.length > 1) {
+    // if (socketIds.length > 1) {
+        console.log('fefre', socketIds);
         callUser(socketIds[0]);
-    }
+    // }
     // socketIds.forEach((socketId) => {
     //     const alreadyExistingUser = document.getElementById(socketId);
     //     if (!alreadyExistingUser) {
