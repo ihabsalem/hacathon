@@ -78,7 +78,7 @@ export class Server {
           users: [socket.id]
         });
       }
-
+      socket.on('drawing', (data) => socket.broadcast.emit('drawing', data));
       socket.on("call-user", (data: any) => {
         socket.to(data.to).emit("call-made", {
           offer: data.offer,

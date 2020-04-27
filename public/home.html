@@ -71,7 +71,17 @@
         </h1>
       </div>
       <img style="height:78px; position:absolute; left:42%" src="./images/kids-together.png"/>
-      <img class="notification-icon" src="./images/notification-icon-with-number.png"/>
+
+      <div class="search start-video">
+        
+        <button onclick="goToVideoPage()" type="submit"><i class="fa fa-video-camera"></i> Start Video</button>
+        <img class="notification-icon" src="./images/notification-icon-with-number.png"/>
+      </div>
+      <script>
+        function goToVideoPage() {
+          window.location.href = 'http://localhost:5000';
+        }
+      </script>
     </header>
       <!-- start of filter HTML -->
     <div class="cd-filter">
