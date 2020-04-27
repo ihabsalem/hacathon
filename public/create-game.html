@@ -13,8 +13,8 @@
     <script async src="https://www.anglomaniacy.pl/js/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style> 
-    .answerButton {
-        display:none;
+    .uploadedImg {
+        display: none;
     }
     .active-user {
             border-bottom: 0;
@@ -27,7 +27,7 @@
         document.getElementById("file1").click();
     }
     function fileUploaded() {
-        $('.answerButton').css('display', 'inline-block');
+        $('.uploadedImg').removeClass('uploadedImg');
         $('.placeholder').css('display', 'none');
 
     }
@@ -89,7 +89,7 @@
                         <strong>Questions</strong>
                     </li>
                     <li class="active-user" id="CQ_nie7_1">
-                        <figure><img id="Q_nie7_1" class="cp answerButton"
+                        <figure><img id="Q_nie7_1" class="cp answerButton uploadedImg"
                                 src="https://www.anglomaniacy.pl/img/v-bath-bw.png" draggable="true"
                                 ondragstart="drag(event)" alt="Quiz answer 7_3">
                                 <img id="Q_nie7_1"
@@ -99,7 +99,7 @@
                             </figure>
                     </li>
                     <li class="active-user" id="CQ_nie7_2">
-                        <figure><img id="Q_nie7_2" class="cp answerButton" ondragstart="drag(event)"
+                        <figure><img id="Q_nie7_2" class="cp answerButton uploadedImg" ondragstart="drag(event)"
                                 src="https://www.anglomaniacy.pl/img/v-brush-bw.png" alt="Quiz answer 7_3"></figure>
                     </li>
                     <!-- 
