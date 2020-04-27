@@ -22,9 +22,12 @@
         document.getElementById("file1").click();
     }
     function fileUploaded(e) {
-        window.img = './images/image-to-be-replaced.png';
-        $('.placeholder').css('display', 'none');
-
+        window.puzzleImage = './images/canwereallyk.png';
+        // debugger;
+        // document.getElementsByTagName('iframe')[0].remove();
+        // setTimeout(() => {
+        //     document.getElementsByClassName('content-container')[0].insertAdjacentElement('<iframe height="100%" width="100%" src="http://localhost:5000/puzzle"></iframe>');
+        // }, 50)        
     }
 
     function allowDrop(ev) {
@@ -91,7 +94,7 @@
                 -webkit-border-radius: 6px;
                 -moz-border-radius: 6px;
                 padding: 13px 28px 13px 28px;
-                width: 160px;
+                width: 154px;
                 text-shadow: 1px 1px 1px #949494;">
                     <input type="file" id="file1" style="display:none" accept="image/x-png,image/gif,image/jpeg"
                         onchange="fileUploaded(event)">

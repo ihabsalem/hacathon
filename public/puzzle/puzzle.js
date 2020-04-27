@@ -32,9 +32,6 @@ function initlization() {
     );
     myTable.addEventListener('drop', dropped, false);
     shuffle(); //need to shuffle initially
-    setTimeout(() => {
-        startRecording();
-    }, 3000);
 }
 
 /*  Shuffle function is responsible of shuffling the table.
@@ -61,13 +58,13 @@ function shuffle() {
             '<span id=' + i + ' class="puzzle-peice" draggable="true"> </span>';
 
         if (i !== 0 && i % (blocks.length / rows.length) === 0) {
-            yPosition = ++rowNumber * 300;
+            yPosition = ++rowNumber * 150;
         }
         blocks[i].children[0].style =
             'background-image: url(' +
             window.puzzleImage +
             ');background-position:' +
-            (-i % (blocks.length / rows.length)) * 300 +
+            (-i % (blocks.length / rows.length)) * 150 +
             'px ' +
             -1 * yPosition +
             'px';
