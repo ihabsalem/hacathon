@@ -84,8 +84,10 @@ p + p {
     position: relative;
     -webkit-box-flex: 0;
     flex: 0 0 240px;
-    width: 240px;
-    height: 320px;
+    width: 260px;
+    height: 260px;
+    /* width: 240px;
+    height: 320px; */
     background-color: #333;
     overflow: hidden;
     border-radius: 10px;
@@ -164,7 +166,7 @@ p + p {
 
 .card-info h1 {
     font-family: 'Playfair Display';
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 700;
     text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
 }
