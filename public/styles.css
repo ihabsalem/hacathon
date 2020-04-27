@@ -93,7 +93,7 @@ body {
     position: relative;
 }
 .student-name {
-    position:fixed;background:white;width: 298px;text-align: center;font-weight:bold; padding: 5px;
+    position:fixed;background:white;    width: 267px;text-align: center;font-weight:bold; padding: 5px;
 
 }
 .student-name.active {
@@ -125,19 +125,23 @@ body {
     right: 371px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    width: 300px;
-    min-height: 226px;
+    width: 267px;
+    height: 200px;
+    background: palevioletred;
+    background: rgba(219, 112,147,0.5);
 }
 
 .local-video {
-    min-height: 226px;
+    height: 200px;
     position: absolute;
     border: 1px solid #cddfe7;
     bottom: 30px;
     right: 40px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    width: 300px;
+    width: 267px;
+    background: palevioletred;
+    background: rgba(219, 112,147,0.5);
 }
 
 /*  OPAKOWANIE GRY +++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -262,7 +266,7 @@ body {
 }
 .quizQuestionIntro {
     margin: 0 auto;
-    padding: 2%;
+padding: 2%;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -webkit-border-radius: 10px;

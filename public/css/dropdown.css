@@ -11,7 +11,7 @@ p {
     color: black;
     padding: 5px 10px;
     margin: 0 5px;
-    background-color: palevioletred;
+    background-color: #65a9e5;
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
@@ -19,7 +19,7 @@ p {
   }
 
   p a:hover {
-    background-color: palevioletred;
+    background-color: #65a9e5;
   }
 
 .select-hidden {
@@ -44,7 +44,7 @@ p {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: palevioletred;
+  background-color: #65a9e5;
   padding: 8px 15px;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -63,10 +63,10 @@ p {
   right: 10px;
 }
 .select-styled:hover {
-  background-color: palevioletred;
+  background-color: #65a9e5;
 }
 .select-styled:active, .select-styled.active {
-  background-color: palevioletred;
+  background-color: #65a9e5;
 }
 .select-styled:active:after, .select-styled.active:after {
   top: 9px;
@@ -84,13 +84,13 @@ p {
   padding: 0;
   list-style: none;
   background-color: white;
-  border: 1px solid gray;
+  border: 1px solid #65a9e5;
 }
 .select-options li {
   margin: 0;
   padding: 12px 0;
   text-indent: 15px;
-  border-top: 1px solid gray;
+  border-top: 1px solid #65a9e5;
   -moz-transition: all 0.15s ease-in;
   -o-transition: all 0.15s ease-in;
   -webkit-transition: all 0.15s ease-in;
