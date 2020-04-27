@@ -16,13 +16,13 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.header >  .notification-icon {
+.header  .notification-icon {
     height: 40px;
     width: 45px;
     cursor: pointer;
     border: 2px solid transparent;
 }
-.header >  .notification-icon :hover {
+.header   .notification-icon :hover {
     border: 2px solid #af5a76;
 }
 .header > .logo-container {

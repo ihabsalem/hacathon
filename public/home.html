@@ -320,6 +320,7 @@
   </div>
 
   <script>
+        window.addEventListener('load', function () {
     gameSaved = localStorage.getItem('GameSaved');
     if (gameSaved) {
       console.log('game saved');
@@ -327,6 +328,7 @@
     } else {
       $('#myOwnGame').hide();
     }
+  });
   </script>
 
   <!-- start of filter logic -->

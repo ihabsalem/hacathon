@@ -35,6 +35,7 @@ window.addEventListener('load', function () {
             $styledSelect.text($(this).text()).removeClass('active');
             $this.val($(this).attr('rel'));
             $list.hide();
+            $('#SwtichGame').change()
             //console.log($this.val());
         });
     

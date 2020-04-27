@@ -15,7 +15,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
   <script async src="https://www.anglomaniacy.pl/js/jquery-1.9.1.min.js"></script>
   <script async src="https://www.anglomaniacy.pl/js/jquery-ui.min.js"></script>
-  <script src="js/modernizr-2.6.2.min.js"></script> 
+  <script src="js/modernizr-2.6.2.min.js"></script>
 
   <style type="text/css">
     .back-link a {
@@ -73,17 +73,18 @@
           School <span class="logo-highlight"> Name</span>
         </h1>
       </div>
-      <img style="height:78px; position:absolute; left:42%" src="./images/kids-together.png"/>
-      <img class="notification-icon" src="./images/notification-icon-with-number.png"/>
+      <img style="height:78px; position:absolute; left:42%" src="./images/kids-together.png" />
+      <img class="notification-icon" src="./images/notification-icon-with-number.png" />
     </header>
     <div class="content-container">
-      <div class="active-users-panel" id="active-user-container">
-        <select>
-          <option value="hide">Start Game</option>
-          <option value="2010">2010</option>
-          <option value="2011">2011</option>
-          <option value="2012">2012</option>
-      </select>
+      <div class="active-users-panel" id="active-user-container" style=" margin-bottom: 20px;">
+        <select id="SwtichGame">
+          <option value="hide">Switch To</option>
+          <option value="board">Board</option>
+          <option value="game1">Game 1</option>
+          <option value="game2">Game 2</option>
+          <option value="game3">Game 3</option>
+        </select>
       </div>
       <div class="video-chat-container">
         <h2 class="talk-info" id="talking-with-info" style="display:none;">
@@ -91,10 +92,10 @@
         </h2>
 
 
-        <div id="board" style="    width: calc(100% - 346px);
+        <div id="board" style=" display:none;   width: calc(100% - 346px);
         right: 20px;
         position: fixed;">
-          <canvas class="whiteboard" ></canvas>
+          <canvas class="whiteboard"></canvas>
 
           <div class="colors">
             <div class="color black"></div>
@@ -105,18 +106,24 @@
           </div>
         </div>
 
-        <section slot="body" style="display: none;   width: calc(100% - 346px);right: 20px; position: fixed;">
-          <iframe height="547px" width="100%" src="http://192.168.1.67:5000/puzzle"></iframe>
+        <section id="game1" slot="body" style="display: none;   width: calc(100% - 346px);right: 20px; position: fixed;">
+          <iframe height="547px" width="100%" src="http://localhost:5000/quiz.html"></iframe>
+        </section>
+
+        <section id="game2" slot="body" style="display: none;   width: calc(100% - 346px);right: 20px; position: fixed;">
+          <iframe height="547px" width="100%" src="http://localhost:5000/puzzle/puzzle.html"></iframe>
         </section>
 
         <div style="min-height:900px">
           <video autoplay class="remote-video" id="remote-video" style="position:fixed; top:100px;left:30px;"></video>
-          <div class="student-name" style="top:265px;left: 31px;">Nermeen</div> 
-          <video autoplay muted class="local-video" id="local-video" style="position:fixed; top:307px;left:30px;"></video>
-          <div class="student-name" style="top: 473px;left: 31px;">Nour</div> 
+          <div class="student-name" style="top:265px;left: 31px;">Nermeen</div>
+          <video autoplay muted class="local-video" id="local-video"
+            style="position:fixed; top:307px;left:30px;"></video>
+          <div class="student-name" style="top: 473px;left: 31px;">Nour</div>
 
-          <video autoplay muted class="local-video" id="local-video" style="position:fixed; top:514px;left:30px;"></video>
-          <div class="student-name" style="    top:679px;left: 31px;">Maysa</div> 
+          <video autoplay muted class="local-video" id="local-video"
+            style="position:fixed; top:514px;left:30px;"></video>
+          <div class="student-name" style="    top:679px;left: 31px;">Maysa</div>
 
 
         </div>
@@ -128,13 +135,45 @@
   <script>
     window.addEventListener('load', function () {
       // setTimeout(function () {
-        $('body').addClass('loaded');
-        $('h1').css('color', '#222222');
+      $('body').addClass('loaded');
+      $('h1').css('color', '#222222');
       // }, 0);
-
+      $('#SwtichGame').change(function () {
+        const value =$('#SwtichGame').val() || 'board';
+        switch(value) {
+          case 'board': {
+            $('#board').show();
+            $('#game1').hide();
+            $('#game2').hide();
+            $('#game3').hide();
+            break;
+          }
+          case 'game1': {
+            $('#board').hide();
+            $('#game1').show();
+            $('#game2').hide();
+            $('#game3').hide();
+            break;
+          }
+          case 'game2': {
+            $('#board').hide();
+            $('#game1').hide();
+            $('#game2').show();
+            $('#game3').hide();
+            break;
+          }
+          case 'game3': {
+            $('#board').hide();
+            $('#game1').hide();
+            $('#game2').hide();
+            $('#game3').show();
+            break;
+          }
+        }
+      });
     });
   </script>
-    <script src="scripts/dropdown.js"></script> 
+  <script src="scripts/dropdown.js"></script>
 
 </body>
 

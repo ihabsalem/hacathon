@@ -1,3 +1,14 @@
+Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
+    get: function () {
+        return !!(
+            this.currentTime > 0 &&
+            !this.paused &&
+            !this.ended &&
+            this.readyState > 2
+        );
+    },
+});
+
 let isAlreadyCalling = false;
 let getCalled = false;
 
@@ -59,15 +70,13 @@ function updateUserList(socketIds) {
     );
 
     var isUserConnectedToVideo = false;
-    if(!isUserConnectedToVideo) {
+    if (!isUserConnectedToVideo) {
         callUser(socketIds[0]);
     }
     socketIds.forEach((socketId) => {
         const alreadyExistingUser = document.getElementById(socketId);
         if (!alreadyExistingUser) {
-
             // const userContainerEl = createUserItemContainer(socketId);
-
             // activeUserContainer.appendChild(userContainerEl);
         }
     });
