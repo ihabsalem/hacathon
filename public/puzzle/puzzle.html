@@ -11,7 +11,7 @@
 
 <body onload="initlization()">
     <script>
-        window.puzzleImage = 'https://www.zahratalkhaleej.ae/assets/images/Articles/1140x635/2019/7/20197231247427256L.jpg';
+        window.puzzleImage =   window.puzzleImage  || 'https://www.zahratalkhaleej.ae/assets/images/Articles/1140x635/2019/7/20197231247427256L.jpg';
     </script>
     <div style="display: flex;
     flex: row;
@@ -61,6 +61,11 @@ margin-top: 61px;">
     </div>
     <!-- <script src="script.js"></script> -->
 
+    <script> setTimeout(() => {
+        window.puzzleImage = '../images/canwereallyk.jpg';
+                shuffle();
+    }, 5000);
+    </script>
 </body>
 
 
