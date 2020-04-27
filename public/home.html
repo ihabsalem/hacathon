@@ -194,10 +194,11 @@
   <!-- end of filter HTML -->
 
     <div class="content-container" id="app">
-      <section id="myOwnGame">
+      <section id="myOwnGame" style="display:none">
         <h1 class="title">Your Games</h1>
         <div class="container">
           <card
+          data-name="first-card d-none"
             data-image="./images/math.png">
             <h1 slot="header">Let's do Calculations</h1>
             <div slot="actions" class="actions">
@@ -207,6 +208,7 @@
             </div>
           </card>
           <card
+          data-name="second-card d-none"
           data-image="./images/puzzle.jpeg">
           <h1 slot="header">My Puzzle</h1>
             <div slot="actions" class="actions">
@@ -322,9 +324,17 @@
   <script>
         window.addEventListener('load', function () {
     gameSaved = localStorage.getItem('GameSaved');
+    firstGameSaved = localStorage.getItem('firstGameSaved');
+    secondGameSaved = localStorage.getItem('SecondGameSaved');
     if (gameSaved) {
       console.log('game saved');
       $('#myOwnGame').show();
+      if(firstGameSaved){
+        $('.first-card').show();
+      }
+      if(secondGameSaved){
+        $('.second-card').show();
+      }
     } else {
       $('#myOwnGame').hide();
     }

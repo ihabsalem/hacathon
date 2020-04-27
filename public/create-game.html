@@ -56,6 +56,7 @@
 
     function saveGame() {
         localStorage.setItem('GameSaved', true);
+        localStorage.setItem('firstGameSaved', true);
         window.location.href = "http://localhost:5000/home"
     }
 </script>
@@ -72,7 +73,13 @@
                 </h1>
             </div>
             <div class="action">
-                <input type="text" placeholder="Enter Game Name....">
+                <input type="text" style="    /* border-radius: 25px 0 0 25px; */
+                /* width: 60vw; */
+                /* max-width: 600px; */
+                border: 1px solid palevioletred;
+                height: 32px;
+                border-radius: 4px;
+                padding: 0px 5px;" Game Name....">
                 <button style="padding: 10px 20px; border-radius: 10px;
             font-weight: bold; cursor: pointer;
             background: #09f; color:#fff" onclick="saveGame()">Save Game</button>

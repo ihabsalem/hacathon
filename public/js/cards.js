@@ -2,7 +2,7 @@ Vue.config.devtools = true;
 
 Vue.component('card', {
     template: `
-    <div class="card-wrap"
+    <div class="card-wrap" :class="[cardName]"
       @mousemove="handleMouseMove"
       @mouseenter="handleMouseEnter"
       @mouseleave="handleMouseLeave"
@@ -21,7 +21,7 @@ Vue.component('card', {
         this.width = this.$refs.card.offsetWidth;
         this.height = this.$refs.card.offsetHeight;
     },
-    props: ['dataImage'],
+    props: ['dataImage', 'dataName'],
     data: () => ({
         width: 0,
         height: 0,
@@ -55,6 +55,9 @@ Vue.component('card', {
             return {
                 backgroundImage: `url(${this.dataImage})`,
             };
+        },
+        cardName() {
+            return this.dataName;
         },
     },
 

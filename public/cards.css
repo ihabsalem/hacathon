@@ -200,3 +200,7 @@ p + p {
     z-index: 99999;
     color: #fff;
 }
+
+.d-none{
+    display: none;
+}

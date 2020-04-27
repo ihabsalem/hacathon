@@ -15,6 +15,8 @@
             }
         }
         var email = $($('.validate-input .input100')[0]).val();
+        localStorage.setItem('user', email);
+
         if(email.indexOf('nermeen') !== -1) {
             window.location.href="http://localhost:5000/home"
         } else {

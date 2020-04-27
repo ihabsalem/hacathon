@@ -75,7 +75,21 @@
                     School <span class="logo-highlight"> Name</span>
                 </h1>
             </div>
-            <img class="notification-icon" src="./images/notification-icon-with-number.png" />
+            <div style="align-items: center;
+            display: flex;
+        " onclick="signOut()">
+                <img class="notification-icon" src="./images/notification-icon-with-number.png" />
+                <i style="width: 45px;
+                cursor: pointer;
+                border: 2px solid transparent;
+                font-size: 31px;" class="fa fa-sign-out" aria-hidden="true"></i>
+            </div>
+            <script>
+                function signOut() {
+                    localStorage.setItem('user', '');
+                    window.location.href = 'http://localhost:5000/login';
+                }
+            </script>
         </header>
         <!-- start of filter HTML -->
         <div class="cd-filter">
@@ -204,8 +218,7 @@
                         <iframe height="547px" width="100%" src="http://localhost:5000/quiz"></iframe>
                     </section>
                 </modal>
-                <card
-                    data-image="./images/math.png">
+                <card data-image="./images/math.png">
                     <h1 slot="header">Let's do Calculations</h1>
                     <div slot="actions" class="actions">
                         <!-- <p slot="content" id="show-modal" @click="showModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
@@ -214,8 +227,7 @@
                         </p>
                     </div>
                 </card>
-                <card
-                    data-image="./images/puzzle.jpeg">
+                <card data-image="./images/puzzle.jpeg">
                     <h1 slot="header">My Puzzle</h1>
                     <div slot="actions" class="actions">
                         <!-- <p slot="content" id="show-modal" @click="showModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
@@ -224,8 +236,7 @@
                         </p>
                     </div>
                 </card>
-                <card
-                    data-image="./images/matching-template-2.jpg">
+                <card data-image="./images/matching-template-2.jpg">
                     <h1 slot="header">Matching Game</h1>
                     <div slot="actions" class="actions">
                         <!-- <p slot="content" id="show-modal" @click="showModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
@@ -234,8 +245,7 @@
                         </p>
                     </div>
                 </card>
-                <card
-                    data-image="./images/multiple-choice.jpg">
+                <card data-image="./images/multiple-choice.jpg">
                     <h1 slot="header">Multiple Choice</h1>
                     <div slot="actions" class="actions">
                         <!-- <p slot="content" id="show-modal" @click="showModal = true"><i class="fa fa-eye" aria-hidden="true"></i>
