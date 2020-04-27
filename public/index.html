@@ -69,8 +69,8 @@
   <div class="container">
     <header class="header">
       <div class="logo-container" onclick="window.location.href='http://localhost:5000/home';" style="cursor: pointer;">
-        <img src="./images/logo.png" width="auto" height="62"/>
-    </div>
+        <img src="./images/logo.png" width="auto" height="62" />
+      </div>
       <img style="height:78px; position:absolute; left:42%" src="./images/kids-together.png" />
       <img class="notification-icon" src="./images/notification-icon-with-number.png" />
 
@@ -105,25 +105,26 @@
           </div>
         </div>
 
-        <section id="game1" slot="body" style="display: none;   width: calc(100% - 346px);right: 20px; position: fixed;">
+        <section id="game1" slot="body"
+          style="display: none;   width: calc(100% - 346px);right: 20px; position: fixed;">
           <iframe height="547px" width="100%" src="http://localhost:5000/quiz.html"></iframe>
         </section>
 
-        <section id="game2" slot="body" style="display: none;   width: calc(100% - 346px);right: 20px; position: fixed;">
+        <section id="game2" slot="body"
+          style="display: none;   width: calc(100% - 346px);right: 20px; position: fixed;">
           <iframe height="547px" width="100%" src="http://localhost:5000/puzzle/puzzle-without.html"></iframe>
         </section>
 
         <div style="min-height:900px">
           <video autoplay class="remote-video" id="remote-video" style="position:fixed; top:100px;left:30px;"></video>
-          <div class="student-name" style="top:265px;left: 31px;">Nermeen</div>
-          <video autoplay muted class="local-video" id="local-video"
+          <div class="student-name student-remote" style="top:265px;left: 31px;"></div>
+          <video autoplay muted class="local-video " id="local-video"
             style="position:fixed; top:307px;left:30px;"></video>
-          <div class="student-name" style="top: 473px;left: 31px;">Nour</div>
-
+          <div class="student-name student-local" style="top: 473px;left: 31px;"></div>
+          <!-- 
           <video autoplay muted class="local-video" id="local-video"
             style="position:fixed; top:514px;left:30px;"></video>
-          <div class="student-name" style="    top:679px;left: 31px;">Maysa</div>
-
+          <div class="student-name" style="    top:679px;left: 31px;">Maysa</div> -->
 
         </div>
       </div>
@@ -133,13 +134,22 @@
   <script src="./scripts/quiz.js"></script>
   <script>
     window.addEventListener('load', function () {
+      const email = localStorage.getItem('user');
+      if (email.toLowerCase().indexOf('nour') !== -1) {
+        $('.student-local').text('Nour')
+        $('.student-remote').text('Maysa')
+      } else {
+        $('.student-local').text('Maysa')
+        $('.student-remote').text('Nour')
+      }
+
       // setTimeout(function () {
       $('body').addClass('loaded');
       $('h1').css('color', '#222222');
       // }, 0);
       $('#SwtichGame').change(function () {
-        const value =$('#SwtichGame').val() || 'board';
-        switch(value) {
+        const value = $('#SwtichGame').val() || 'board';
+        switch (value) {
           case 'board': {
             $('#board').show();
             $('#game1').hide();
