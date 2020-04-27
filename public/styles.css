@@ -16,11 +16,15 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.header > .notification-icon {
+.header > div > .notification-icon {
     height: 40px;
     width: 45px;
+    cursor: pointer;
+    border: 2px solid transparent;
 }
-
+.header > div > .notification-icon :hover {
+    border: 2px solid #af5a76;
+}
 .header > .logo-container {
     display: flex;
     align-items: center;
@@ -2649,18 +2653,9 @@ strong {
     display: table-cell;
 }
 
-input {
-    position: relative;
-    z-index: 2;
-    float: left;
-    width: 100%;
-    margin-bottom: 0;
-    display: table-cell;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    margin: 0;
+#addAnswer {
+    flex: 1;
 }
-
 .suffix input {
     border-radius: 4px 0px 0px 4px;
 }
@@ -2690,4 +2685,16 @@ input {
     position: relative;
     display: table;
     border-collapse: separate;
+}
+
+.start-video {
+    display: flex;
+    align-items: center;
+}
+.start-video button {
+    border-radius: 11px;
+    border: 2px solid transparent;
+}
+.start-video button:hover {
+    border: 2px solid #af5a76;
 }
