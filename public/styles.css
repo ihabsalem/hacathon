@@ -77,6 +77,8 @@ body {
     border-bottom: 1px solid #cddfe7;
     cursor: pointer;
     user-select: none;
+    list-style-type: none;
+
 }
 
 .active-user:hover {

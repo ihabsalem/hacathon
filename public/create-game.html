@@ -12,18 +12,18 @@
     <script async src="https://www.anglomaniacy.pl/js/jquery-1.9.1.min.js"></script>
     <script async src="https://www.anglomaniacy.pl/js/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style> 
-    .uploadedImg {
-        display: none;
-    }
-    .active-user {
+    <style>
+        .uploadedImg {
+            display: none;
+        }
+
+        .active-user {
             border-bottom: 0;
-    }
+        }
     </style>
 </head>
 <script>
-      function openFileOption()
-    {
+    function openFileOption() {
         document.getElementById("file1").click();
     }
     function fileUploaded() {
@@ -79,42 +79,46 @@
             </div>
         </header>
         <div class="content-container" style="display: flex;flex-direction: row;height: 100%;">
-            <div class="active-users-panel" style="padding: 0px 10px;overflow: auto;display:flex; flex-direction: column;justify-content: flex-start;" id="active-user-container">
+            <div class="active-users-panel"
+                style="padding: 0px 10px;overflow: auto;display:flex; flex-direction: column;justify-content: flex-start;"
+                id="active-user-container">
                 <h3 class="panel-title" style="display: flex;justify-content: space-between;">Game Assets:
-                    <input type="file" id="file1" style="display:none" accept="image/x-png,image/gif,image/jpeg" multiple onchange="fileUploaded()">
+                    <input type="file" id="file1" style="display:none" accept="image/x-png,image/gif,image/jpeg"
+                        multiple onchange="fileUploaded()">
                     <a href="#" onclick="openFileOption();return;">Upload</a>
                 </h3>
-                <ul>
+                <ul style="max-height: 400px;
+                overflow: auto;">
                     <li class="active-user">
                         <strong>Questions</strong>
                     </li>
                     <li class="active-user" id="CQ_nie7_1">
                         <figure><img id="Q_nie7_1" class="cp answerButton uploadedImg"
                                 src="https://www.anglomaniacy.pl/img/v-bath-bw.png" draggable="true"
-                                ondragstart="drag(event)" alt="Quiz answer 7_3">
-                                <img id="Q_nie7_1"
-                                class="placeholder"
-                                src="images/Placeholder.png" style="width:200px;height:150px;"
-                                ondragstart="drag(event)" alt="Quiz answer 7_3">
-                            </figure>
+                                ondragstart="drag(event)" alt="Quiz answer 7_3" style="width:200px;height:150px;">
+                            <img id="Q_nie7_1" class="placeholder" src="images/Placeholder.png"
+                                style="width:200px;height:150px;" draggable="true" ondragstart="drag(event)" alt="Quiz answer 7_3">
+                        </figure>
                     </li>
                     <li class="active-user" id="CQ_nie7_2">
-                        <figure><img id="Q_nie7_2" class="cp answerButton uploadedImg" ondragstart="drag(event)"
-                                src="https://www.anglomaniacy.pl/img/v-brush-bw.png" alt="Quiz answer 7_3"></figure>
+                        <figure><img id="Q_nie7_2" class="cp answerButton uploadedImg" draggable="true" ondragstart="drag(event)"
+                                src="https://www.anglomaniacy.pl/img/v-brush-bw.png" style="width:200px;height:150px;"  alt="Quiz answer 7_3"></figure>
                     </li>
-                    <!-- 
+
                     <li class="active-user" id="CQ_nie7_3">
-                        <figure><img id="Q_nie7_3" class="cp answerButton" ondragstart="drag(event)"
-                                src="https://www.anglomaniacy.pl/img/v-comb-bw.png" alt="Quiz answer 7_3"></figure>
+                        <figure><img id="Q_nie7_3" class="cp answerButton uploadedImg" draggable="true" ondragstart="drag(event)"
+                                src="https://www.anglomaniacy.pl/img/v-comb-bw.png" style="width:200px;height:150px;"  alt="Quiz answer 7_3"></figure>
                     </li>
                     <li class="active-user" id="CQ_nie7_4">
-                        <figure><img id="Q_nie7_4" class="cp answerButton" ondragstart="drag(event)"
-                                src="https://www.anglomaniacy.pl/img/v-mirror-bw.png" alt="Quiz answer 7_3"></figure>
+                        <figure><img id="Q_nie7_4" class="cp answerButton uploadedImg" draggable= "true" ondragstart="drag(event)"
+                                src="https://www.anglomaniacy.pl/img/v-mirror-bw.png" style="width:200px;height:150px;"  alt="Quiz answer 7_3"></figure>
                     </li>
                     <li class="active-user" id="CQ_nie7_5">
-                        <figure><img id="Q_nie7_5" class="cp answerButton" ondragstart="drag(event)"
-                                src="https://www.anglomaniacy.pl/img/v-shampoo-bw.png" alt="Quiz answer 7_3"></figure>
-                    </li> -->
+                        <figure><img id="Q_nie7_5" class="cp answerButton uploadedImg" draggable="true" ondragstart="drag(event)"
+                                src="https://www.anglomaniacy.pl/img/v-shampoo-bw.png" style="width:200px;height:150px;"  alt="Quiz answer 7_3"></figure>
+                    </li>
+                </ul>
+                <ul>
                     <li class="active-user">
                         <strong>Answers</strong>
                         <p style="display: flex;">
@@ -126,7 +130,8 @@
                         </p>
                         <script>
                             function addAnswer() {
-                                $('.active-users-panel').append($('<li class="active-user" id="Qnie7_2"> <figure><img id="nie7_2" class="cp answerButton" ondragstart="drag(event)"  src="https://www.anglomaniacy.pl/img/ws-' + $('#addAnswer').val() + '.png" alt="Quiz answer 7_3"></figure> </li>'))
+                                const answer = $('#addAnswer').val().toLowerCase();
+                                $('.active-users-panel').append($('<li class="active-user" id="Qnie7_2"> <figure><img id="nie7_2" class="cp answerButton" ondragstart="drag(event)"  src="https://www.anglomaniacy.pl/img/ws-' + answer + '.png" alt="Quiz answer 7_3"></figure> </li>'))
                                 $('#addAnswer').val('');
                             }
                             window.addEventListener('load', function () {
@@ -141,7 +146,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="video-chat-container">
+            <div class="video-chat-container" style="    padding-top: 103px;">
                 <div class="boxQuiz b-09f sun-tlo">
                     <!-- PICTURE MENU  -->
                     <div class="section group buttons">
