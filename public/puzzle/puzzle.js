@@ -33,7 +33,7 @@ function initlization() {
     myTable.addEventListener('drop', dropped, false);
     shuffle(); //need to shuffle initially
     setTimeout(() => {
-        startRecording();
+        // startRecording();
     }, 3000);
 }
 

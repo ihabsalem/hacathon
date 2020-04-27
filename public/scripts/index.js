@@ -68,18 +68,18 @@ function updateUserList(socketIds) {
     const activeUserContainer = document.getElementById(
         'active-user-container'
     );
-
-    var isUserConnectedToVideo = false;
-    if (!isUserConnectedToVideo) {
+    console.log('fefre', socketIds);
+    // var isUserConnectedToVideo = false;
+    if (socketIds.length > 1) {
         callUser(socketIds[0]);
     }
-    socketIds.forEach((socketId) => {
-        const alreadyExistingUser = document.getElementById(socketId);
-        if (!alreadyExistingUser) {
-            // const userContainerEl = createUserItemContainer(socketId);
-            // activeUserContainer.appendChild(userContainerEl);
-        }
-    });
+    // socketIds.forEach((socketId) => {
+    //     const alreadyExistingUser = document.getElementById(socketId);
+    //     if (!alreadyExistingUser) {
+    //         // const userContainerEl = createUserItemContainer(socketId);
+    //         // activeUserContainer.appendChild(userContainerEl);
+    //     }
+    // });
 }
 
 const socket = io.connect('localhost:5000');

@@ -54,6 +54,9 @@ export class Server {
     this.app.get("/student", (req, res) => {
       res.sendFile("student.html",  { root: __dirname+ '/../public/' });
     });
+    this.app.get("/landing", (req, res) => {
+      res.sendFile("landing/landing.html",  { root: __dirname+ '/../public/' });
+    });
 
     this.app.get("/", (req, res) => {
       console.log('req');
