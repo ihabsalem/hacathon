@@ -1,0 +1,168 @@
+header,section,footer,aside, nav, article, hgroup{
+    display:block;
+}
+
+body, html {
+    display:-webkit-box;/*indicates that the body will contain flexible boxes in it*/
+    -webkit-box-pack:center;/*indicates how are the inside boxes will be packed togather*/
+    /*The above line will center the body child ( which is the webiste)*/
+    /*a weird way of centering the website*/
+    /* background-color: #FFD3E0; */
+    color:#222222;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    line-height:1.5;
+    font-weight: bold;
+    font-size: 87.5%; 
+    text-align:center;
+    margin : 0 auto;
+    width: 100%;
+    /* background-color: #FFCEE0; */
+
+}
+td, h1,button{
+        color:cornsilk;
+ font:normal 40px arial;
+ text-shadow: 0 1px 0 #ccc,
+ 0 2px 0 #c9c9c9,
+
+ 0 3px 0 #bbb,
+
+ 0 4px 0 #b9b9b9,
+
+ 0 5px 0 #aaa,
+
+ 0 6px 1px rgba(0,0,0,.2),
+
+ 0 0 5px rgba(0,0,0,.2),
+
+ 0 1px 3px rgba(0,0,0,.4),
+
+ 0 3px 5px rgba(0,0,0,.3),
+
+ 0 5px 10px rgba(0,0,0,.35),
+
+ 0 10px 10px rgba(0,0,0,.3),
+
+ 0 20px 20px rgba(0,0,0,.25);
+}
+label{
+    font-size:15px;
+    color: #555;
+    font-weight: bold;
+}
+
+
+h1{
+    font-famiy:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-color:#3F7154;
+}
+
+section{
+    max-width:500px;
+    margin:0px;
+    display:-webkit-box;/*A box and can change in size it's children can also change in size*/
+    -webkit-box-orient: vertical; /* place children on top of each other */ 
+    -webkit-box-flex:1;/*to allow the webiste to be flexible either shrink or grow in size horizantally*/
+}
+header{
+    background-color: #FF93CC;
+    width: 100%;
+    color: #69AD96;
+    padding:10px;
+    text-align:center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin:0 auto;
+}
+
+ td:hover {
+        
+    cursor: pointer;
+  
+}
+
+table {
+
+    width:50%;
+    margin: 10px auto;
+	border-style: ridge;
+}
+
+td {
+	border-style: ridge;
+   padding: 8px;
+}
+
+
+
+
+#pageFooter
+{
+background-color: #FF93CC;
+border-radius:30px; 
+display:block;
+color: aliceblue;
+text-align:center;
+margin-top:80px;
+}
+
+
+.button {
+    background-color:hotpink;
+    color:white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    padding: 13px 28px 13px 28px;
+    text-shadow: 1px 1px 1px #949494;
+}
+ .button:hover {
+    background-color:#FF93CC;
+}
+form{
+	margin-top:50px;
+}
+input[type="text"] {
+  color: #555;
+  font: normal 14px/14px Arial, Helvetica, sans-serif;
+  padding: 10px;
+  border: solid 1px #E5E5E5;
+  transition: box-shadow 0.3s, border 0.3s;
+  height: 20px;
+  line-height:15px;
+  background: #ddddd;
+    margin:30px;
+}
+
+input[type="text"]:focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+  background:white;
+}
+
+.smart-green {
+    margin-left:auto;
+    margin-right:auto;
+
+    max-width: 500px;
+    background: #F8F8F8;
+    padding: 30px 30px 20px 30px;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #666;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.puzzle-peice { 
+    display: inline-block;
+    width: 300px;
+    height:300px;
+    background-repeat: space;
+}
+

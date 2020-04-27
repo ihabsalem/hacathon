@@ -42,6 +42,9 @@ export class Server {
     this.app.get("/quiz", (req, res) => {
       res.sendFile("quiz.html",  { root: __dirname+ '/../public/' });
     });
+    this.app.get("/puzzle", (req, res) => {
+      res.sendFile("puzzle.html",  { root: __dirname+ '/../public/puzzle' });
+    });
     this.app.get("/create-game", (req, res) => {
       res.sendFile("create-game.html",  { root: __dirname+ '/../public/' });
     });
