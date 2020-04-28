@@ -894,7 +894,7 @@ Footer Part Ends
 
 
     <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js"></script>   
-    <script src="http://themesitem.com/demos/html/kidsure/kidsure/js/jquery-1.12.4.min.js"></script>
+    <!-- <script src="http://themesitem.com/demos/html/kidsure/kidsure/js/jquery-1.12.4.min.js"></script> -->
     <script src="http://themesitem.com/demos/html/kidsure/kidsure/js/bootstrap.min.js"></script>
 
     <script src="http://themesitem.com/demos/html/kidsure/kidsure/js/popper.min.js"></script>
@@ -908,10 +908,10 @@ Footer Part Ends
             $(document).ready(function() {
                 debugger;
                 $('.colorful-button').click((e) => {
-                    let buttonText =  jQuery(e.currentTarget).text();
-                    jQuery(e.currentTarget).text( 'to be supported');
+                    let buttonText =  $(e.currentTarget).text();
+                    $(e.currentTarget).text( 'Soon!');
                     setTimeout(() => {
-                        jQuery(e.currentTarget).text(buttonText);
+                        $(e.currentTarget).text(buttonText);
                     }, 2000); 
                 });
                 $('a').removeAttr('href')
