@@ -17,12 +17,6 @@
     <link rel="stylesheet" href="http://themesitem.com/demos/html/kidsure/kidsure/css/responsive.css">
     <link rel="shortcut icon" type="image/png" href="images/logo.png"/>
     <link rel="shortcut icon" type="image/png" href="images/logo.png"/>
-    <style>
-        .align-center {
-            display: flex;
-            align-items: center;
-        }
-    </style>
 </head>
 
 <body>
@@ -893,7 +887,7 @@ Footer Part Ends
                         <div class="col-md-3 p-md-0 text-center">
                             <i class="fal fa-map-marker-alt"></i>
                         </div>
-                        <div class="col-md-9 px-md-0">
+                        <div class="col-md-9 px-md-0 justify-content-center">
                             <address>1234, Business Park, Amman, Jordan</address>
                         </div>
                     </div>
@@ -903,7 +897,7 @@ Footer Part Ends
                         <div class="col-md-3 px-md-0 text-center">
                             <i class="fal fa-user-headset"></i>
                         </div>
-                        <div class="col-md-9 px-md-0 align-center">
+                        <div class="col-md-9 px-md-0 justify-content-center d-flex align-items-center">
                             <a href="callto:+797145530" class="afoot">(+962) 79 714 5530</a>
                             <!-- <br>
                             <a href="callto:+8809876543210">(+962) 77 543 210</a> -->
@@ -915,7 +909,7 @@ Footer Part Ends
                         <div class="col-md-3 px-md-0 text-center">
                             <i class="fal fa-envelope"></i>
                         </div>
-                        <div class="col-md-9 px-md-0 align-center">
+                        <div class="col-md-9 px-md-0 justify-content-center d-flex align-items-center">
                             <a href="mailto:togetherlearn2020@gmail.com" class="afoot">togetherlearn2020@gmail.com</a>
                             <!-- <br> -->
                             <!-- <a class="afoot" href="mailto:togetherlearn2020@gmail.com">togetherlearn2020@gmail.com </a> -->
@@ -961,7 +955,6 @@ Footer Part Ends
     <script src="http://themesitem.com/demos/html/kidsure/kidsure/js/custom.js"></script>
     <script> 
             $(document).ready(function() {
-                debugger;
                 $('.colorful-button').click((e) => {
                     let buttonText =  $(e.currentTarget).text();
                     $(e.currentTarget).text( 'Soon!');

@@ -3317,3 +3317,12 @@ comments Part ends
       .flaticon-bus:before { content: "\f102"; }
       .flaticon-headphones:before { content: "\f103"; }
       .flaticon-professor:before { content: "\f104"; }
+
+
+      @media (max-width: 575.98px) {
+        header .logo-small img  {
+            padding: 15px 0!important;
+            height: 100px;
+            width: auto!important;
+        }
+      }
