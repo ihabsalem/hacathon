@@ -1483,14 +1483,14 @@ Teachers Part Ends
 
 
 #teacher .teacher-individual ul.tech-social {
-    display: none;
-    /*
+    /* display: none; */
+    
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
     -webkit-transition: 0.4s;
     -ms-transition: 0.4s;
     transition: 0.4s;
-*/
+
 }
 
 #teacher .teacher-individual ul.tech-social li {

@@ -839,11 +839,14 @@ Blog Part Ends
                 <h4>Nermeen Mattar</h4>
                 <p>Founder and CEO</p>
                 <ul class="tech-social">
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="https://www.facebook.com/MattarNermeen"><i class="fab fa-facebook-f"></i></a></li>
+                    <!-- <li><a href="#"><i class="fab fa-twitter"></i></a></li> -->
+                    <li><a href="https://www.linkedin.com/in/nermeen-mattar/"><i class="fab fa-linkedin-in"></i></a></li>
+                    <!-- <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li> -->
                 </ul>
+                <span> In July 2019 my project “تلاقي” was one of the 26 projects selected in the “Haramain Technology Accelerator” out of 600 (Hajj Hackathon) projects which applied to the camp held by Badir. 
+                </span>
+
                 <div class="tech-button one">
                     <i class="far fa-ellipsis-h"></i>
                 </div>
@@ -853,13 +856,15 @@ Blog Part Ends
                     alt="">
                 <h4>Ihab Salem</h4>
                 <p>CTO</p>
-                <p>Senior Web/Mobile Developer</p>
                 <ul class="tech-social">
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="https://www.facebook.com/ihabsalem93"><i class="fab fa-facebook-f"></i></a></li>
+                    <!-- <li><a href="#"><i class="fab fa-twitter"></i></a></li> -->
+                    <li><a href="https://www.linkedin.com/in/ihab-salem/"><i class="fab fa-linkedin-in"></i></a></li>
+                    <!-- <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li> -->
                 </ul>
+                <!-- <p>Senior Web/Mobile Developer</p> -->
+                <span> Started developing applications since I was in University. Launched various number of projects where I worked on different project aspects; frontend, backend and UX.
+                </span>
                 <div class="tech-button two">
                     <i class="far fa-ellipsis-h"></i>
                 </div>
@@ -962,7 +967,14 @@ Footer Part Ends
                         $(e.currentTarget).text(buttonText);
                     }, 2000); 
                 });
-                $('a').removeAttr('href')
+                $('a').each((el,element) => {
+                    console.log('el', element.href.includes('#') ||  element.href.includes('html'));
+                    if( element.href.includes('#') ||  element.href.includes('html')) {
+                        $(element).removeAttr('href');
+                    } else {
+                        debugger;
+                     }
+                });
                 $('.colorful-button').css('color', 'white')
             });
         </script>
