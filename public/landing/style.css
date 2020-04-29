@@ -502,14 +502,17 @@ Program Part Ends
 #program .program-bg {
     background: url(../image/program-bg.jpg)center no-repeat;
     background-size: cover;
-    height: 570px;
-    margin-bottom: 510px;
 }
 
 #program .program-content {
-    position: absolute;
-    top: 60px;
+    /* position: absolute;
+    top: 60px; */
+    margin: 120px 0;
     width: 100%;
+}
+
+#gallery {
+    margin: 100px 0 ;
 }
 
 #program .program-content .section-heading {
@@ -744,20 +747,22 @@ Program Part Ends
     background-position: initial;
 }
 
+#program .prog4 .prog-picture {
+    background: url(images/filter.png) center no-repeat;
+    background-position: initial;
+}
+
+#program .prog5 .prog-picture {
+    background: url(images/on-ipad.jpg) center no-repeat;
+    background-position: initial;
+}
+
 #program .prog4 {
     color: #fbd08d;
 }
 
-#program .prog4 .prog-picture {
-    background: url(../image/prog4.jpg) center no-repeat;
-}
-
 #program .prog5 {
     color: #f5958e;
-}
-
-#program .prog5 .prog-picture {
-    background: url(../image/prog5.jpg) center no-repeat;
 }
 
 #program .prog6 {
@@ -3271,6 +3276,7 @@ comments Part starts
 #comments .poo{
     padding-bottom: 40px;
 } #comments #comments #comments
+
 /* ===========================
 comments Part ends
 ============================= */
